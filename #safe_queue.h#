@@ -1,0 +1,33 @@
+#ifndef BLOCKING_QUEUE_H
+#define BLOCKING_QUEUE_H
+
+
+#include <deque>
+#include <mutex>
+#include <vector>
+#include <condition_variable>
+
+
+#incude "task.h"
+
+
+class BlockingQueue:{
+private:
+    bool has_limit;
+    size_t m_limit;
+    std::mutex m_mutex;
+    std::deque<Task> m_queue;
+    std::condition_variable m_condition;
+
+public:
+    BlockingQueue(void );
+    BlockingQueue(size_t limit);
+
+    Task top(void) const;
+    Task pop(void);
+    void push_back(Task& task);
+
+    
+}
+
+#endif

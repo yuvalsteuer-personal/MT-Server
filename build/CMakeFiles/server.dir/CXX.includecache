@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yuvalsteuer/client_server/server.cpp
+server_socket.h
+/home/yuvalsteuer/client_server/server_socket.h
+
+/home/yuvalsteuer/client_server/server_socket.cpp
+server_socket.h
+/home/yuvalsteuer/client_server/server_socket.h
+
+/home/yuvalsteuer/client_server/server_socket.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+iostream
+-
+sys/socket.h
+-
+netinet/in.h
+-
+
