@@ -3,6 +3,8 @@
 
 #include <string>
 #include <time.h>
+#include <unistd.h>
+
 
 enum TaskType{
     TIME,

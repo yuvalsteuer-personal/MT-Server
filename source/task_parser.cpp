@@ -1,4 +1,4 @@
-#include "task_parser.h"
+#include "../headers/task_parser.h"
 
 
 static std::vector<std::string> TaskParser::split(std::string sentence){
@@ -52,13 +52,13 @@ static Task TaskParser::generateTask(std::vector<std::string> wordVector){
             if (word == "--command-id") {
                 stack.push(word)
             }
-            else if(word == "--repeat"{
+            else if(word == "--repeat" {
                 stack.push(word);
             }
-                    else if(word == "--delay-factor"){
+            else if(word == "--delay-factor") {
                 stack.push(word);
             }
-            else{
+            else {
                 throw std::invalid_argument();
             }
         }

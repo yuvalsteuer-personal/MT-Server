@@ -1,4 +1,4 @@
-#include "client_socket.h"
+#include "../headers/client_socket.h"
 
 ClientSocket::ClientSocket(std::string hostAddress, int port, bool debug_mode){
     this->debug_mode = debug_mode;

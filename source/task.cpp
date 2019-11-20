@@ -1,4 +1,5 @@
-#include "task.h"
+#include "../headers/task.h"
+#define SECONDS 100000
 
 Task::Task(bool repeat, int delay_factor, TaskType command_id) {
     this->m_repeat = repeat;
@@ -14,8 +15,15 @@ enum TaskType{
 
 void Task::execute(){
     std::string time, osVersion, hostFile;
-    if(m_delay_factor){
-        switch(m_command_id){
+    size_t repeat = 1;
+    if(m_repeat) {
+        repeat++;
+    }
+    for(int i = 0; i < repeat;i++) {
+        if (m_delay_factor) {
+            usleep(m_delay_factor * SECONDS);
+        }
+        switch (m_command_id) {
             case TaskType::TIME:
                 time = getTime();
                 break;
@@ -28,12 +36,12 @@ void Task::execute(){
         }
     }
 }
-std::string getTime() {
+std::string Task::getTime() {
     return "12:00:00";
 }
-std::string getOSVersion() {
+std::string Task::getOSVersion() {
     return "Linux";
 }
-std::string getHostFile() {
+std::string Task::getHostFile() {
     return "<html><h1> Hello, World! </h1></html>";
 }
